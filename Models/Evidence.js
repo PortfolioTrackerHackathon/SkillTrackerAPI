@@ -4,13 +4,19 @@ const User = require("./User");
 const Skill = require("./Skill");
 
 const Evidence = sequelize.define("Evidence", {
-  evidence_id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
+  evidenceid: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
+  userid: { type: DataTypes.INTEGER },
+  skillid: { type: DataTypes.INTEGER },
   description: { type: DataTypes.TEXT },
-  status: { type: DataTypes.STRING(20), defaultValue: "pending" },
-  attachment_url: { type: DataTypes.TEXT },
-}, { tableName: "evidence", timestamps: true });
+  statusid: { type: DataTypes.INTEGER },
+  attachmenturl: { type: DataTypes.TEXT }
+}, { 
+  tableName: "evidence", 
+  timestamps: false   // disable createdAt/updatedAt since not in table
+});
 
-Evidence.belongsTo(User, { foreignKey: "user_id" });
-Evidence.belongsTo(Skill, { foreignKey: "skill_id" });
+// ✅ Associations must match your DB column names
+Evidence.belongsTo(User, { foreignKey: "userid" });
+Evidence.belongsTo(Skill, { foreignKey: "skillid" });
 
 module.exports = Evidence;
