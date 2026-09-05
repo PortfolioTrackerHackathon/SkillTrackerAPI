@@ -1,0 +1,27 @@
+GET http://localhost:3000/evidence
+Content-Type: application/json
+
+# {
+#   "userid": 1,
+#   "skillid": 2,
+#   "description": "Submitted project report for review",
+#   "statusid": 1,
+#   "attachmenturl": "http://example.com/report.pdf"
+# }
+
+
+# {
+#     "email": "example@gmail.com",
+#     "password": "12345"
+# }
+
+# //{
+#     "firstname": "Benard",
+#     "lastname": "Denver",
+#     "email": "example@gmail.com",
+#     "password": "12345",
+#     "stakeholderid": 1
+# //}
+
+//http://localhost:3000/evidence
+//http://localhost:3000/users
